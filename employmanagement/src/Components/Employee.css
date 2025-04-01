@@ -1,0 +1,126 @@
+/* Employee.css */
+
+.employee-container {
+    padding: 15px;
+    margin-top: 15px;
+    /* Ensure the container itself doesn't restrict overflow */
+    overflow: visible;
+}
+
+.employee-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Allow items to wrap on smaller screens */
+}
+
+.employee-header h3 {
+    margin-bottom: 10px;
+    /* Add some space below the title */
+}
+
+.add-employee-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.employee-table-container {
+    /* This is the crucial part: */
+    overflow-x: auto !important; /* Enable horizontal scrolling, important! */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    width: 100%; /* Ensure it takes full width of its parent */
+    position: relative; /* Important for containing the table */
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    table-layout: fixed; /* Add this to help with column widths */
+    min-width: 100%; /* Ensure the table is at least as wide as its container */
+}
+
+.employee-table th,
+.employee-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    word-wrap: break-word; /* Prevent long words from breaking layout */
+}
+
+.employee-table th {
+    background-color: #f2f2f2;
+}
+
+.employee-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Ensure image doesn't overflow its container */
+    height: auto;
+}
+
+.edit-button {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 5px; 
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.delete-button {
+    background-color:#ffc107;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Hide columns on small screens */
+@media (max-width: 768px) {
+    .hide-on-small {
+        display: none;
+    }
+
+    .employee-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .employee-header .add-employee-button {
+        margin-top: 10px;
+    }
+}
+
+/* Adjustments for even smaller screens */
+@media (max-width: 576px) {
+    .employee-table th,
+    .employee-table td {
+        padding: 6px;
+        font-size: 0.85rem;
+    }
+
+    .edit-button,
+    .delete-button {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+        margin-right: 5px; 
+    }
+}
