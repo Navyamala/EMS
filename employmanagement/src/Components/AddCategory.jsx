@@ -20,7 +20,7 @@ const AddCategory = () => {
     };
 
     return (
-        <div className='d-flex justify-content-center align-items-center min-vh-75'>
+        <div className='d-flex justify-content-center align-items-center min-vh-100'>
             <div className='p-4 rounded border shadow-lg w-100' style={{ maxWidth: '400px' }}>
                 <h2 className='text-center mb-4'>Add Category</h2>
                 <form onSubmit={handleSubmit}>
